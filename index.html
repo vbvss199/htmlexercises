@@ -1,0 +1,134 @@
+<!-- provide the user a good way to navigate and interact with ur site -->
+ <!-- make your HTML semantics -->
+<!-- semantics is about using the correct element in HTML -->
+<!-- the most common ones that has no meaning at all in the web components are 
+<div> and <span> they tell us nothing about the content they have no built in accessibility features  -->
+<!-- the elements which are better suited for semantic are <form> <table> <article> -->
+<!-- links are described by using the anchor  -->
+
+<!-- <h2>Get in the driver's seat and get paid</h2>
+<p>drive on the platform with the largest network of active riders</p>
+<a href="/signup/drive">Sign up to drive</a>
+<a href="/en/drive">Learn more about driving and delivering</a>
+<img src ="driver.png" alt=""> -->
+
+<!-- the above one is semantically correct the button is coded as link it should be button  -->
+ <!-- the anchor tag should be used for any interaction that navigates to another view  -->
+  <!-- live reload is not possible without the body!!! -->
+
+
+  <!-- scratch basics again HTML -->
+   <!-- bold tag  <b></b>-->
+
+<!-- the very first tag that we need is doctype tag  which tells the browser that this is html tag-->
+<!DOCTYPE html>
+<html>
+    <!-- everything inside this is HTML and ensuring that it inherits the necessary proprties of HTMl -->
+     <!-- the html is splitted into two sections the head and the body -->
+      <head>
+        <!-- contains the information about the website -->
+         <!-- head is the part where we load javascript and css files -->
+          
+         <meta charset="utf-8">
+          <!-- coz we need to tranlsate the symbols and other things to bits and bytes encoding for that we r using utf8 -->
+          
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <!-- this is for the responsive website making the device width for the content  -->
+
+         <!-- the other important tag is title giving the title of the page which appears on the tab when we open   -->
+         <title>my first website</title>
+      </head>
+
+      <body>
+
+        <!-- everything we see on the website will be written inside this body  -->
+        <!-- we can make lists tables and create any heading tags we want  -->
+        <!-- lets look at the header tags first ranging from h1 to h3 -->
+         <h1>my first website</h1>
+         <h2>an html playground</h2>
+         <h3>an html playground</h3>
+         <h4>an html playground</h4>
+
+         <!-- lets walk through the paragraph tag  and to get the best content for a website is lorum epsumm tag-->
+          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
+            in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, 
+            consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature,
+            discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. 
+            This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        </p>
+
+        <p>
+            t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using 
+            Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', 
+            making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, 
+            and a search for 'lorem ipsum' will uncover many web sites still in their infancy Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </p>
+        
+        <!-- even though if we provide any extra spaces it wont break in the website so to break it we need to provide the br tag  -->
+         <!-- we can add multiple br tags in order to create extra spaces breaklines -->
+        <!-- for html5 we mno longer require the breaking end tags for the nr tag -->
+        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,<br><br><br><br><br><br>
+        by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, 
+        you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
+        making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+        The generated Lorem Ipsum is therefore always free from repetition, 
+        injected humour, or non-characteristic words etc.
+        
+        this is my first website and im <b>extremely excited</b>
+        <br><br><br>
+
+        <!-- lets add the style tags now -->
+        <b>bold text</b><br>
+        <i>and im italic text</i><br>
+        <em>the default for emphasis is italic again</em><br>
+        <u>and here comes the underlined tag</u><br><br>
+        <strong>strong tag same as the bold tag</strong>
+
+        <!-- next one is the horizantal row tag which creates a straight line -->
+        <hr>
+        
+        <!-- the most important tag is the link tag  -->
+         <!-- the main attribute tag of the anchor tag is href -->
+          <!-- if the link is cliked then it is purpl   e and ever visited before then it is in blue color  -->
+           <!-- to get the page in anew webpage we use _blank for the target -->
+         <a href="https://www.google.com/?zx=1768419622557&no_sw_cr=1" target="_blank" >click the fucking link here</a><br>
+         <!-- the next important tag is the image tag which adds an image to the website-->
+          <!-- the alt tag is for the alternatice text on a html tag which proovides a description for the image it is requied attribute and proper web functionality -->
+          <!-- to get the border around the image we use the attribute border  -->
+          <img src="driver.png" alt="the uber image" >
+        
+
+          <!-- the next thing is lists, there are two types of list the ordered one and the unordered list(bullet list)  either ol or ul-->
+           <ul>
+            <!-- inside this list each list item goes in !!!!!! -->
+             <li>oranges</li>
+             <li>bananas</li>
+             <li>peach</li>
+             <li>grapes</li>
+             <li>bullshit</li>
+           </ul>
+
+           <!-- the ordered list -->
+            <ol>
+            <!-- inside this list each list item goes in !!!!!! -->
+             <li>oranges</li>
+             <ul>
+                <li>
+                    hey
+                </li>
+                <li>wassup</li>
+             </ul>
+             <!-- in the above the hey and wasup are the child elements whereas the oranges are the parent element -->
+             <li>bananas</li>
+             <li>peach</li>
+             <li>grapes</li>
+             <li>bullshit</li>
+           </ol>
+
+           <!-- the last tag is the table tag -->
+            <!-- we will have table rows ,cells,columns for the table  -->
+            <table>
+
+            </table>
+    </body>
+</html>
