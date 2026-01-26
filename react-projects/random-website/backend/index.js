@@ -2,8 +2,9 @@ import express from "express";
 import { PORT,mongoDBURL,mongoDBURL2} from "./configure.js";
 import mongoose from "mongoose";
 const app=express();
+import booksRoute from './routes/booksRoute.js';
 
-import {Book} from './models/booksModel.js';
+
 
 // lets do a get request 
 // the first param is root url or home url
@@ -21,7 +22,7 @@ import {Book} from './models/booksModel.js';
 // the result is sent to the browser page we r asking the server via get and the server replied via message welcome to mern stack 
 // create a account on the mongodb platform and import the mongoose library inorder to work with the mongodb `
 
-// use json parse in order to parse the response in the postman
+// use json parse in order to parse the response in the postman,this is a middleware to parse the json 
 app.use(express.json());
 
 
@@ -29,9 +30,6 @@ app.get('/',(req,res)=>{
     console.log(req.body);
     return res.status(200).send("welcome to mern stack")
 });
-
-
-// route for creating a new book
 
 mongoose.connect(mongoDBURL2).then(()=>{
     console.log("sucessfully connected to the mangodb");
@@ -42,28 +40,14 @@ mongoose.connect(mongoDBURL2).then(()=>{
     console.log(error)
 })
 
-app.post('/books',async (req,res)=>{
-    try{
-        if(!req.body.title || !req.body.author || !req.body.publishedYear){
-            return res.status(400).send({
-                message:'send all required fields:title, author,publishedYear'
-            });
-        }
-        const newBook={
-            title:req.body.title,
-            author:req.body.author,
-            publishedYear:req.body.publishedYear,
-        };
-        // now lets create the book by calling book .create
-        const book=await Book.create(newBook);
 
-        return res.status(200).send(book);
+// implemented in t`he postman as well
 
-    }catch(error){
-        console.log(error);
-        res.status(500).send({message:error.message})
-    }
-});
+// this is all the books route if we have different model then we need to create a different route so cut this code and paste it in the routes folder
+
+// lets use the route booksroute we created
+// so when we put or post anything app will route to the books from now 
+app.use('/books',booksRoute);
 
 
-// lets create the database models and books inside it 
+// cors policy in NODE.js
