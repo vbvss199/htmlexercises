@@ -3,8 +3,7 @@ import { PORT,mongoDBURL,mongoDBURL2} from "./configure.js";
 import mongoose from "mongoose";
 const app=express();
 import booksRoute from './routes/booksRoute.js';
-
-
+import cors from 'cors';
 
 // lets do a get request 
 // the first param is root url or home url
@@ -24,6 +23,18 @@ import booksRoute from './routes/booksRoute.js';
 
 // use json parse in order to parse the response in the postman,this is a middleware to parse the json 
 app.use(express.json());
+
+// cors as an middleware 
+// option1 :allow all origins with deafault od cors(*)
+app.use(cors());
+
+// option 2 allowing the custom origins
+// specify the origin u want to allow  
+app.use(cors({
+    origin:'http://localhost:3000',
+    methods:['GET','POST','PUT','DELETE'],
+    allowedHeaders:['Content-Type'],
+}))
 
 
 app.get('/',(req,res)=>{
@@ -50,4 +61,4 @@ mongoose.connect(mongoDBURL2).then(()=>{
 app.use('/books',booksRoute);
 
 
-// cors policy in NODE.js
+// cors policy in NODE.js 
