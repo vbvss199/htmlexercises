@@ -30,11 +30,13 @@ app.use(cors());
 
 // option 2 allowing the custom origins
 // specify the origin u want to allow  
-app.use(cors({
-    origin:'http://localhost:3000',
-    methods:['GET','POST','PUT','DELETE'],
-    allowedHeaders:['Content-Type'],
-}))
+// comment the below line to allow any network to use the backend api or server
+
+// app.use(cors({
+//     origin:'http://localhost:3000',
+//     methods:['GET','POST','PUT','DELETE'],
+//     allowedHeaders:['Content-Type'],
+// }))
 
 
 app.get('/',(req,res)=>{
