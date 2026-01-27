@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   // initialising the books with the empty array
   const [books,setBooks]=useState([]);
-  const [loading,setLoading]=useState(false)
+  const [loading,setLoading]=useState(true)
   useEffect(()=>{
     setLoading(true);
     axios.get('http://localhost:5500/books').then((response)=>{
