@@ -4,9 +4,11 @@ using MyWebApi.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // add services to the container
-var serverVersion = new MySqlServerVersion(new Version(8, 0, 29)); // Replace with your server version if different
-builder.Services.AddDbContext<ApplicationDbContext>(options=>options
-.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), serverVersion));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    )
+);
 
 // Add services to the container.
 builder.Services.AddControllers();

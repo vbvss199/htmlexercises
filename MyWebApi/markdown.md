@@ -38,3 +38,29 @@ create an entities folder under which we need to create employee.cs which will h
 the applicationdb class will inherit from another class  DbContext 
 
 <!-- there inside the class we will add a property for the collection we r going to save inside the database  it will take the type dbset will the class employee we created  -->
+
+
+while connecting the server is localhost 1433
+
+to start the sql server 
+docker start sqlserver
+or 
+docker ps -a
+
+Think of a container as:
+“A lightweight, isolated mini-computer that runs ONE thing.”
+compared to vm it is lighter faster shares host os easy to delete and used everywhere 
+
+to delete the sql server 
+docker rm sqlserver
+
+
+docker ps          # running containers
+docker ps -a       # all containers
+docker stop sqlserver
+docker start sqlserver
+docker rm sqlserver
+
+
+
+to check the correct process status we use docker ps 
