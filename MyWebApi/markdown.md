@@ -74,3 +74,8 @@ kill -9 <PID> {-9 to say kill the process }
 <!-- add a new controller to do crud operations inside it  -->
 actually on vs code it is messy or long process coz we dont hve any pre build templates so when creating the controllers we need to code from the scratch i guess 
 API Controller 
+
+
+
+C# basics
+Console.WriteLine camelcase 
