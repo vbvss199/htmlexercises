@@ -17,26 +17,26 @@ VALUES
 ('Pooja', 'Mehta', 'pooja.mehta@example.com'),
 ('Rohit', 'Kumar', 'rohit.kumar@example.com');
 
--- to create a table portfolio  
-CREATE TABLE Portfolios (
-    PortfolioId INT IDENTITY PRIMARY KEY,
-    Name NVARCHAR(100) NOT NULL,
-    Owner NVARCHAR(100) NOT NULL,
-    CreatedAt DATETIME NOT NULL DEFAULT GETDATE()
-);
+-- -- to create a table portfolio  
+-- CREATE TABLE Portfolios (
+--     PortfolioId INT IDENTITY PRIMARY KEY,
+--     Name NVARCHAR(100) NOT NULL,
+--     Owner NVARCHAR(100) NOT NULL,
+--     CreatedAt DATETIME NOT NULL DEFAULT GETDATE()
+-- );
 
--- portfolio items
-CREATE TABLE PortfolioItems (
-    PortfolioItemId INT IDENTITY PRIMARY KEY,
-    PortfolioId INT NOT NULL,
-    AssetName NVARCHAR(100) NOT NULL,
-    AssetType NVARCHAR(50) NOT NULL,
-    Quantity DECIMAL(18,2) NOT NULL,
-    AveragePrice DECIMAL(18,2) NOT NULL,
+-- -- portfolio items
+-- CREATE TABLE PortfolioItems (
+--     PortfolioItemId INT IDENTITY PRIMARY KEY,
+--     PortfolioId INT NOT NULL,
+--     AssetName NVARCHAR(100) NOT NULL,
+--     AssetType NVARCHAR(50) NOT NULL,
+--     Quantity DECIMAL(18,2) NOT NULL,
+--     AveragePrice DECIMAL(18,2) NOT NULL,
 
-    CONSTRAINT FK_PortfolioItems_Portfolios
-        FOREIGN KEY (PortfolioId)
-        REFERENCES Portfolios(PortfolioId)
-        ON DELETE CASCADE
-);
+--     CONSTRAINT FK_PortfolioItems_Portfolios
+--         FOREIGN KEY (PortfolioId)
+--         REFERENCES Portfolios(PortfolioId)
+--         ON DELETE CASCADE
+-- );
 

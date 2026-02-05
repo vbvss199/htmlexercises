@@ -25,6 +25,20 @@ namespace MyWebApi.Controllers
             return Ok(allEmployees);
         }
 
+        // if we want to retrieve a single employee then we go witht the id 
+        [HttpGet]
+        // we accept the route param
+        [Route("{id}")]
+        public IActionResult GetEmployeeId(int id)
+        {
+            var employee=Dbcontext.Employees.Find(id);
+            if(employee is null)
+            {
+                return NotFound();
+            }
+            return Ok(employee);
+        }
+
         [HttpPost]
         // the params inside the addemployee will be dto's which are data transfer objects 
         public IActionResult AddEmplyee(AddEmployeeDto addEmployeeDto)
@@ -40,5 +54,41 @@ namespace MyWebApi.Controllers
 
             return Ok(employeeEntity);
         }
+
+        // to update the employee information 
+        [HttpPut]
+        [Route("{id}")]
+        public IActionResult UpdateEmployee(int id,UpdateEmployeeDto updateEmployeeDto)
+        {
+            // we need to create a separate class called as updateEmployeeddo.cs
+            // get the employee using the id 
+            var emp=Dbcontext.Employees.Find(id);
+            if(emp is null)
+            {
+                return NotFound();
+            }
+            emp.FirstName=updateEmployeeDto.FirstName;
+            emp.LastName=updateEmployeeDto.LastName;
+            emp.Email=updateEmployeeDto.Email;
+            Dbcontext.SaveChanges();
+
+            return Ok(emp);
+        }
+
+        // finale operation is the delete operation!
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult DeleteEmployee(int id)
+        {
+            var emp=Dbcontext.Employees.Find(id);
+            if(emp is null)
+            {
+                return NotFound();
+            }
+            Dbcontext.Employees.Remove(emp);
+            Dbcontext.SaveChanges();
+            return Ok();   
+        }
+
     }
 }
