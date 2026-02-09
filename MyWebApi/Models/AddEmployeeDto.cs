@@ -1,4 +1,3 @@
-
 namespace MyWebApi.Models
 {
     public class AddEmployeeDto

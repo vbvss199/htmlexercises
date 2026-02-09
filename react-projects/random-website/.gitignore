@@ -26,3 +26,6 @@ yarn-error.log*
 
 # Configuration files with sensitive data
 backend/configure.js
+
+# Encrypted files
+.env
