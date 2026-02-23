@@ -5,6 +5,20 @@ using MyWebApi.Models;
 namespace MyWebApi.Controllers
 {
     // basically this will be going to the localhost:portnumber/api/controllernamewedefined by using the cotroller it maps the name to the defined controller 
+    // the one in the sqaure braces are called as attributes which gives us the extra information(metadta about the class metjod and properties )
+    // here we defined the url pattern of this controller 
+    // if we defined them then it tells ASP.net core to apply these method
+    // the controller gets replaced by api/Employees the controller will be removed in the end point 
+    // and finally it becomes https://localhost:5052/api/employees
+    // when we have attributes treat this classes as special , speical in the sense [Route("api/[controller]")], so this tells asp.net framework to 
+    // This class should respond to HTTP requests at this URL.”
+    // So this attribute: Enables routing Connects URL to controller
+    // [httpget] this attribute It tells ASP.NET Core:This method should run only when a GET request comes.” Without it:
+    // the last controller is [APICOntroller ] -> Automatic Model Validation, ASP.NET automatically returns 400 Bad Request
+    // the real end points are http://localhost:5052/api/employee and http://localhost:5052/api/department not the swagger one 
+    // Swagger UI is just a testing interface for your APIs.
+    // so if we have the react project the api are used by the particualr ui 
+
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeesController : ControllerBase

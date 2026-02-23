@@ -19,7 +19,7 @@ dotnet new webapi -n TempWebApi
 
 <!-- if any time want to kill the process  -->
 lsof -i tcp:portnumber 
-lsof -i tcp:5051 the one which we defined inside the launch.json
+lsof -i tcp:5051 the one which we defined inside the launch json as of now it is 5052
 lists the port number with pid 
 kill -9 5051
 

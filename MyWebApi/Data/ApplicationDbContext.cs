@@ -17,6 +17,9 @@ namespace MyWebApi.Data
         // So, when you query Employees, you get back a list of Employee objects.
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments{get;set;}
+        // department is defined from the department class and departments is the table holding the bunch department class
+        // Each Department object → represents one row in the Departments table
+        // Department is an entity class that defines the structure of the table, and Departments is the table that stores multiple Department records (rows).
     }
 }
  
