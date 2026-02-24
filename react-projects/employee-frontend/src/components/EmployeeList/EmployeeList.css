@@ -1,0 +1,26 @@
+/* EmployeeList.css */
+.employee-list-container {
+    margin-top: 20px;
+}
+
+.employee-list {
+    list-style: none;
+    padding: 0;
+}
+
+.employee-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.employee-list-item button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
