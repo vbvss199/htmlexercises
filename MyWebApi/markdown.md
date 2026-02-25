@@ -55,7 +55,7 @@ to delete the sql server
 docker rm sqlserver
 
 
-docker ps          # running containers
+docker ps          # running containers #process status 
 docker ps -a       # all containers
 docker stop sqlserver
 docker start sqlserver
@@ -79,3 +79,6 @@ API Controller
 
 C# basics
 Console.WriteLine camelcase 
+
+
+<!-- to allow the usage of the api we need to do cors in the program.cs that allows to use this api without any interruption by the react front end framework  -->
